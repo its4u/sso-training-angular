@@ -1,6 +1,54 @@
-# SsoTrainingAngular2
+# SsoTrainingAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+
+# Red Hat SSO integration
+
+1. Add keycloak module
+
+    npm install keycloak-angular@5.1.0 --save
+
+2. Modify AppModule to use KeycloakService
+
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule, APP_INITIALIZER } from '@angular/core';
+    
+    import { AppRoutingModule } from './app-routing.module';
+    import { HttpClientModule } from "@angular/common/http";
+    
+    import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
+    
+    
+    export function initializer(keycloak: KeycloakService): () => Promise<any> {
+        return (): Promise<any> => keycloak.init({config: 'assets/auth/keycloak.json'});
+    }
+    
+    @NgModule({
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        KeycloakAngularModule
+    ],
+    providers: [
+        {
+        provide: APP_INITIALIZER,
+        useFactory: initializer,
+        multi: true,
+        deps: [KeycloakService]
+        },
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+
+
+3. Copy keycloak.json from Red Hat SSO to the assets folder.
+
+4. Define a guard to verify that the authenticated user has the roles defined on route.
+
 
 ## Development server
 
