@@ -38,10 +38,10 @@ export class ProductService {
     return (error: any): Observable<T> => {
    
       // TODO: send the error to remote logging infrastructure
-      console.error("Error when calling operation " + operation); 
+      console.error("Error when calling operation ", operation); 
       console.error(error); // log to console instead
       
-      // Let the app keep running by returning an empty result.
+      // Let the app keep running by returning a mocked result.
       return of(result as T);
     };
   }
