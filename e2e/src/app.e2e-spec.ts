@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to sso-training-angular!');
+    expect(page.getTitleText()).toEqual('Welcome to sso-training-angular2!');
   });
 
   afterEach(async () => {

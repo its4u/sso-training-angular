@@ -1,22 +1,6 @@
-# SsoTrainingAngular
+# SsoTrainingAngular2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
-
-
-# Red Hat SSO integration
-
-1. Add keycloak module
-
-    npm install keycloak-js --save
-
-2. 
-
-
-3. Create your KeycloakService using the Angular CLI:
-
-    ng generate service keycloak
-
-
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
 
