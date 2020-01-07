@@ -1,8 +1,0 @@
-{
-  "realm": "Capitalisation",
-  "auth-server-url": "http://localhost:8180/auth",
-  "ssl-required": "external",
-  "resource": "sso-training-angular",
-  "public-client": true,
-  "confidential-port": 0
-}
